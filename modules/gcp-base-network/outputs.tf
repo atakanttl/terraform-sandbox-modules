@@ -1,7 +1,3 @@
-output "prefix" {
-  value = local.prefix
-}
-
 output "vpc_name" {
   value = google_compute_network.this.name
 }

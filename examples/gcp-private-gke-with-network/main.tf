@@ -16,7 +16,7 @@ module "gke" {
   project    = var.project
   region     = var.region
   zone_count = 1
-  prefix     = module.network.prefix
+  prefix     = var.prefix
 
   vpc_name                      = module.network.vpc_name
   subnet_name                   = module.network.subnet_name

@@ -1,7 +1,7 @@
 resource "google_compute_firewall" "allow_ssh_via_iap" {
   count     = var.enable_default_firewall_rules == true ? 1 : 0
   project   = var.project
-  name      = "${local.prefix}-allow-ssh-via-iap"
+  name      = "${var.prefix}-allow-ssh-via-iap"
   network   = google_compute_network.this.name
   direction = "INGRESS"
   priority  = "1000"
@@ -17,7 +17,7 @@ resource "google_compute_firewall" "allow_ssh_via_iap" {
 resource "google_compute_firewall" "allow_internal" {
   count     = var.enable_default_firewall_rules == true ? 1 : 0
   project   = var.project
-  name      = "${local.prefix}-allow-internal"
+  name      = "${var.prefix}-allow-internal"
   network   = google_compute_network.this.name
   direction = "INGRESS"
   priority  = "1000"
@@ -32,7 +32,7 @@ resource "google_compute_firewall" "allow_internal" {
 resource "google_compute_firewall" "allow_health_checks" {
   count     = var.enable_default_firewall_rules == true ? 1 : 0
   project   = var.project
-  name      = "${local.prefix}-allow-health-checks"
+  name      = "${var.prefix}-allow-health-checks"
   network   = google_compute_network.this.name
   direction = "INGRESS"
   priority  = "1000"
