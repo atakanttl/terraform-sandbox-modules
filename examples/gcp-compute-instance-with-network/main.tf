@@ -10,22 +10,8 @@ module "network" {
   secondary_range_services = var.secondary_range_services
 }
 
-module "gke" {
-  source = "../../modules/gcp-compute-instance"
-
-  project = var.project
-  region  = var.region
-  prefix  = var.prefix
-
-  vpc_name                      = module.network.vpc_name
-  subnet_name                   = module.network.subnet_name
-  secondary_range_pods_name     = module.network.secondary_range_pods_name
-  secondary_range_services_name = module.network.secondary_range_services_name
-  master_cidr_range             = var.master_cidr_range
-}
-
 module "compute_instance" {
-  source = "../modules/gcp-compute-instance"
+  source = "../../modules/gcp-compute-instance"
 
   project = var.project
   region  = var.region
