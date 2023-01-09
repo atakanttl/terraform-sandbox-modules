@@ -18,7 +18,7 @@ module "compute_instance" {
   vpc_name    = module.network.vpc_name
   subnet_name = module.network.subnet_name
 
-  enable_public_ip = true
+  enable_public_ip = var.enable_public_ip
   enable_spot      = var.enable_spot
   image_name       = var.image_name
   disk_size_gb     = var.disk_size_gb
