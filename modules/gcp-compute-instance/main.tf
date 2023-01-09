@@ -5,7 +5,7 @@ data "google_compute_zones" "available" {
 
 resource "random_integer" "zone_index" {
   min = 0
-  max = length(data.google_compute_zones.available.names)
+  max = length(data.google_compute_zones.available.names) - 1
 }
 
 resource "google_compute_instance" "this" {
