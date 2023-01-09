@@ -5,9 +5,7 @@ module "network" {
   region  = var.region
   prefix  = var.prefix
 
-  subnet_range             = var.subnet_range
-  secondary_range_pods     = var.secondary_range_pods
-  secondary_range_services = var.secondary_range_services
+  subnet_range = var.subnet_range
 }
 
 module "compute_instance" {
