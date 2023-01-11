@@ -1,8 +1,8 @@
-output "endpoint" {
+output "gke_endpoint" {
   value = module.gke.endpoint
 }
 
-output "endpoint" {
+output "gke_endpoint" {
   value = module.gke.ca_certificate
 }
 
